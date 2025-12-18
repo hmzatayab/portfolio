@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
 import profileImage from "./assets/hamza.png";
+import logoImageOne from "./assets/StarTrack.png";
+import logoImageTwo from "./assets/rosoro.png";
+import logoImageThree from "./assets/Taar.png";
+import logoImageFour from "./assets/Stenceils.png";
+import logoImageFive from "./assets/goeek.png";
+import logoImageSix from "./assets/fourovr.png";
 import {
   Menu,
   X,
@@ -25,6 +31,12 @@ import {
   Phone,
   Send,
   ChevronDown,
+  Hexagon,
+  Infinity,
+  Zap,
+  Command,
+  CloudLightning,
+  Box,
 } from "lucide-react";
 
 const GlobalStyles = memo(() => (
@@ -45,10 +57,15 @@ const GlobalStyles = memo(() => (
       0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.2); }
       50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.5); }
     }
+    @keyframes scroll-infinite {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
     .animate-float-slow { animation: float-slow 6s ease-in-out infinite; will-change: transform; }
     .animate-float-medium { animation: float-medium 5s ease-in-out infinite; will-change: transform; }
     .animate-float-fast { animation: float-fast 4s ease-in-out infinite; will-change: transform; }
     .animate-pulse-glow { animation: pulse-glow 3s infinite; }
+    .animate-scroll-infinite { animation: scroll-infinite 30s linear infinite; will-change: transform; }
   `}</style>
 ));
 
@@ -94,7 +111,8 @@ const Hero = memo(({ scrollToSection }) => {
           </h1>
 
           <p className="text-xl text-neutral-400 max-w-xl leading-relaxed border-l-4 border-purple-500/50 pl-6">
-          I create visual stories. From websites to brand identity, every design is driven by purpose and innovation.
+            I create visual stories. From websites to brand identity, every
+            design is driven by purpose and innovation.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-4">
@@ -132,12 +150,23 @@ const Hero = memo(({ scrollToSection }) => {
             </div>
             <div className="w-px h-12 bg-white/10"></div>
             <div className="flex -space-x-4">
-              {[1, 2, 3, 4].map((i) => (
+              {[
+                { src: "https://i.pravatar.cc/120?img=12", alt: "Client 1" },
+                { src: "https://i.pravatar.cc/120?img=32", alt: "Client 2" },
+                { src: "https://i.pravatar.cc/120?img=56", alt: "Client 3" },
+                { src: "https://i.pravatar.cc/120?img=68", alt: "Client 4" },
+              ].map((avatar, i) => (
                 <div
-                  key={i}
-                  className="w-12 h-12 rounded-full bg-neutral-800 border-2 border-neutral-950 flex items-center justify-center text-[10px] text-neutral-500"
+                  key={avatar.src}
+                  className="w-12 h-12 rounded-full border-2 border-neutral-950 bg-neutral-800 overflow-hidden"
+                  style={{ zIndex: 10 - i }}
                 >
-                  User
+                  <img
+                    src={avatar.src}
+                    alt={avatar.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               ))}
             </div>
@@ -200,6 +229,41 @@ const Hero = memo(({ scrollToSection }) => {
   );
 });
 
+const Brands = memo(() => {
+  const brands = [
+    { name: "StarTrack", logo: logoImageFive },
+    { name: "StarTrack", logo: logoImageSix },
+    { name: "StarTrack", logo: logoImageThree },
+    { name: "StarTrack", logo: logoImageFour },
+    { name: "StarTrack", logo: logoImageOne },
+    { name: "StarTrack", logo: logoImageTwo },
+  ];
+
+  return (
+    <section className="py-12 border-b border-white/5 bg-neutral-950 relative z-20">
+      <div className="container mx-auto px-6">
+        <p className="text-center text-xs font-bold text-neutral-600 uppercase tracking-[0.2em] mb-8 animate-pulse">
+          Trusted by Innovative Companies
+        </p>
+
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+          {brands.map((brand, index) => (
+            <div key={`${brand.name}-${index}`} className="group cursor-default">
+              <img
+                src={brand.logo}
+                alt={`${brand.name} logo`}
+                loading="lazy"
+                decoding="async"
+                className="h-10 md:h-12 w-auto opacity-60 grayscale brightness-110 contrast-125 transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+});
+
 const Services = memo(() => {
   const servicesList = [
     {
@@ -253,7 +317,8 @@ const Services = memo(() => {
             </span>
           </h2>
           <p className="text-neutral-400 text-lg leading-relaxed">
-          I don’t just create designs; I tell brand stories through visual language. Every pixel reflects innovation and detail.
+            I don’t just create designs; I tell brand stories through visual
+            language. Every pixel reflects innovation and detail.
           </p>
         </div>
 
@@ -405,7 +470,7 @@ const Portfolio = memo(() => {
             </span>
           </h2>
           <p className="text-neutral-400 text-lg leading-relaxed">
-          A few selected projects that define my creative journey.
+            A few selected projects that define my creative journey.
           </p>
         </div>
 
@@ -528,7 +593,8 @@ const Contact = memo(() => {
                 </span>
               </h2>
               <p className="text-lg text-neutral-400 leading-relaxed max-w-md">
-              If you have an amazing project idea or just want to say 'Hi', feel free to connect. I’m always ready for new challenges.
+                If you have an amazing project idea or just want to say 'Hi',
+                feel free to connect. I’m always ready for new challenges.
               </p>
             </div>
 
@@ -672,6 +738,25 @@ const Contact = memo(() => {
   );
 });
 
+const Marquee = memo(() => {
+  return (
+    <section className="py-6 bg-neutral-950 border-t border-white/5 overflow-hidden group cursor-default">
+      <div className="flex">
+        {[0, 1].map((i) => (
+          <div
+            key={i}
+            className="flex shrink-0 animate-scroll-infinite group-hover:[animation-play-state:paused]"
+          >
+            <span className="text-[10vw] md:text-[8rem] font-black uppercase tracking-tighter text-neutral-800/50 whitespace-nowrap px-8 transition-all duration-500 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-orange-500 group-hover:scale-100">
+              Let's Talk — Start A Project — Get In Touch —
+            </span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+});
+
 const Footer = memo(() => {
   return (
     <footer className="border-t border-white/5  bg-black">
@@ -792,9 +877,11 @@ const App = () => {
       </header>
 
       <Hero scrollToSection={scrollToSection} />
+      <Brands />
       <Services />
       <Portfolio />
       <Contact />
+      <Marquee />
       <Footer />
     </div>
   );
