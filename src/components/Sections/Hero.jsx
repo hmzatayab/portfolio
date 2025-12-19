@@ -104,11 +104,16 @@ export const Hero = memo(({ scrollToSection }) => {
           </div>
         </div>
 
-        <div className="relative h-[600px] flex items-center justify-center z-10 lg:-ml-10">
-          <div className="relative w-[380px] md:w-[480px] h-[550px]">
+        <div className="relative h-auto md:h-[600px] flex items-center justify-center z-10 lg:-ml-10 mt-12 lg:mt-0">
+          <div className="relative w-full max-w-[440px] md:w-[480px] h-[450px] md:h-[550px]">
             <div className="absolute inset-0 bg-linear-to-tr from-purple-600 to-blue-600 rounded-4xl blur-3xl opacity-30 animate-pulse-glow will-change-transform"></div>
 
-            <div className="relative w-full h-full rounded-4xl overflow-hidden border border-white/10 bg-neutral-900 shadow-2xl transform rotate-2 hover:rotate-0 transition-all duration-700 will-change-transform">
+            <div
+              className="relative w-full h-full rounded-4xl overflow-hidden border border-white/10 bg-neutral-900 shadow-2xl transform rotate-2 hover:rotate-0 transition-all duration-700 will-change-transform"
+              style={{
+                WebkitMaskImage: "-webkit-radial-gradient(white, black)",
+              }}
+            >
               <img
                 src={profileImage}
                 alt="Designer Portrait"
@@ -117,6 +122,7 @@ export const Hero = memo(({ scrollToSection }) => {
                 className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute bottom-0 left-0 w-full h-40 bg-linear-to-t from-neutral-950 to-transparent"></div>
+
               <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md border border-white/10 rounded-xl">
                 <p className="text-xs font-semibold text-purple-400 mb-1">
                   Graphic Designer & UI Artist
@@ -125,34 +131,37 @@ export const Hero = memo(({ scrollToSection }) => {
               </div>
             </div>
 
-            <div className="absolute -top-6 -right-12 p-4 bg-neutral-800/80 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl animate-float-slow flex gap-2 z-20">
-              <div className="w-5 h-5 rounded-full bg-cyan-400"></div>
-              <div className="w-5 h-5 rounded-full bg-purple-500"></div>
-              <div className="w-5 h-5 rounded-full bg-pink-500"></div>
+            <div className="absolute -top-6 -right-2 md:-right-12 p-3 md:p-4 bg-neutral-800/80 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl animate-float-slow flex gap-2 z-20 scale-90 md:scale-100">
+              <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-cyan-400"></div>
+              <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-purple-500"></div>
+              <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-pink-500"></div>
             </div>
 
-            <div className="absolute -bottom-8 -left-12 p-5 bg-neutral-900 border border-white/10 rounded-2xl shadow-xl animate-float-medium flex items-center gap-3 z-20">
+            <div className="absolute -bottom-6 -left-2 md:-bottom-8 md:-left-12 p-3 md:p-5 bg-neutral-900 border border-white/10 rounded-2xl shadow-xl animate-float-medium flex items-center gap-3 z-20 scale-90 md:scale-100">
               <div className="bg-purple-500/20 p-2 rounded-lg text-purple-400">
-                <PenTool size={24} />
+                <PenTool size={20} className="md:w-6 md:h-6" />
               </div>
-              <div>
+              <div className="hidden md:block">
+                {" "}
                 <p className="text-xs text-neutral-400">Tool</p>
                 <p className="text-sm font-bold">Vector Art</p>
               </div>
             </div>
 
-            <div className="absolute top-1/2 -right-16 p-4 bg-neutral-900 border border-white/10 rounded-xl shadow-xl animate-float-fast delay-700 z-20">
-              <Layers className="text-blue-400" size={28} />
+            <div className="absolute top-1/2 -right-4 md:-right-16 p-3 md:p-4 bg-neutral-900 border border-white/10 rounded-xl shadow-xl animate-float-fast delay-700 z-20 scale-90 md:scale-100">
+              <Layers className="text-blue-400 w-6 h-6 md:w-7 md:h-7" />
             </div>
 
-            <div className="absolute top-12 -left-10 p-3 bg-white text-black rounded-lg shadow-xl animate-float-slow delay-300 transform -rotate-12 z-20">
-              <MousePointer2 size={24} fill="currentColor" />
+            <div className="absolute top-12 -left-2 md:-left-10 p-2 md:p-3 bg-white text-black rounded-lg shadow-xl animate-float-slow delay-300 transform -rotate-12 z-20 scale-90 md:scale-100">
+              <MousePointer2
+                size={20}
+                className="md:w-6 md:h-6"
+                fill="currentColor"
+              />
               <div className="absolute top-full left-0 bg-white text-[10px] font-bold px-2 py-0.5 rounded mt-1">
                 Me
               </div>
             </div>
-
-            <div className="absolute top-4 right-1/2 text-yellow-400 animate-spin-slow opacity-80"></div>
           </div>
         </div>
       </div>
