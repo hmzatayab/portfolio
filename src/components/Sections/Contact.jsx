@@ -1,6 +1,16 @@
 import { memo } from "react";
 import { Background } from "../Background";
-import { ChevronDown, Dribbble, Instagram, Linkedin, Mail, MapPin, Monitor, Phone, Send } from "lucide-react";
+import {
+  ChevronDown,
+  Dribbble,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Monitor,
+  Phone,
+  Send,
+} from "lucide-react";
 
 export const Contact = memo(() => {
   return (
@@ -82,17 +92,28 @@ export const Contact = memo(() => {
 
             <div className="flex gap-4 pt-4">
               {[
-                <Instagram key="i" />,
-                <Dribbble key="d" />,
-                <Linkedin key="l" />,
-                <Monitor key="m" />,
-              ].map((icon, i) => (
+                {
+                  icon: <Instagram />,
+                  href: "https://www.instagram.com/hmzatayab",
+                },
+                {
+                  icon: <Dribbble />,
+                  href: "https://www.behance.net/humza_official",
+                },
+                {
+                  icon: <Linkedin />,
+                  href: "https://www.linkedin.com/in/humza-rajput/",
+                },
+                { icon: <Monitor />, href: "https://linktr.ee/hamzatayyab" },
+              ].map((item, index) => (
                 <a
-                  key={i}
-                  href="#"
+                  key={index}
+                  href={item.href}
+                  target="_blank" 
+                  rel="noopener noreferrer" 
                   className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-400 hover:bg-white hover:text-black hover:-translate-y-1 transition-all duration-300"
                 >
-                  {icon}
+                  {item.icon}
                 </a>
               ))}
             </div>
@@ -110,7 +131,7 @@ export const Contact = memo(() => {
                   </label>
                   <input
                     type="text"
-                    placeholder="Ahmed Raza"
+                    placeholder="Hamza Tayyab"
                     className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
                   />
                 </div>
@@ -120,7 +141,7 @@ export const Contact = memo(() => {
                   </label>
                   <input
                     type="email"
-                    placeholder="ahmed@example.com"
+                    placeholder="hmzatayab@gmail.com"
                     className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
                   />
                 </div>
@@ -169,6 +190,7 @@ export const Contact = memo(() => {
           </div>
         </div>
       </div>
+      <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-white/5 rounded-full opacity-50 animate-spin-slow duration-[20s]"></div>
     </section>
   );
 });

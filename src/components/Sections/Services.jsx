@@ -119,6 +119,8 @@ export const Services = memo(() => {
           </span>
         </div>
       </div>
+      <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/6 -translate-y-1/2 w-[120%] h-[120%] border border-white/5 rounded-full opacity-50 animate-spin-slow duration-[20s]"></div>
+      <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-white/5 rounded-full opacity-50 animate-spin-slow duration-[20s]"></div>
     </section>
   );
 });

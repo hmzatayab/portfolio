@@ -5,9 +5,11 @@ import { Brands } from "./components/Sections/Brands";
 import { Services } from "./components/Sections/Services";
 import { Portfolio } from "./components/Sections/Portfolio";
 import { Contact } from "./components/Sections/Contact";
-import { Marquee } from "./components/Sections/Marquee";
+import { AvailabilityMarquee, Marquee } from "./components/Sections/Marquee";
 import { Footer } from "./components/Sections/Footer";
 import { Header } from "./components/Sections/Header";
+import { AboutUs } from "./components/Sections/About";
+import { FeaturedGallery } from "./components/Sections/Gallery";
 
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -40,7 +42,9 @@ const App = () => {
       <Hero scrollToSection={scrollToSection} />
       <Brands />
       <Services />
-      <Portfolio />
+      <FeaturedGallery />
+      <AvailabilityMarquee />
+      <AboutUs scrollToSection={scrollToSection} />
       <Contact />
       <Marquee />
       <Footer />
