@@ -45,6 +45,11 @@ export const Services = memo(() => {
       className="relative z-10 py-24 bg-neutral-950 overflow-hidden"
     >
       <Background />
+      <div className="absolute top-1/6 left-0 -translate-y-1/2 w-full text-center overflow-hidden opacity-[0.03] select-none">
+        <span className="text-[15rem] md:text-[20rem] font-black uppercase tracking-tighter whitespace-nowrap">
+          Services
+        </span>
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-24 max-w-3xl mx-auto">

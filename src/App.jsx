@@ -10,6 +10,7 @@ import { Footer } from "./components/Sections/Footer";
 import { Header } from "./components/Sections/Header";
 import { AboutUs } from "./components/Sections/About";
 import { FeaturedGallery } from "./components/Sections/Gallery";
+import { Testimonials } from "./components/Sections/Testimonials";
 
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -45,6 +46,7 @@ const App = () => {
       <FeaturedGallery />
       <AvailabilityMarquee />
       <AboutUs scrollToSection={scrollToSection} />
+      <Testimonials />
       <Contact />
       <Marquee />
       <Footer />
