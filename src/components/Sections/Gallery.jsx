@@ -1,10 +1,10 @@
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { memo, useState } from "react";
-import imageOne from "../../assets/Gallary/3.jpg"
-import imageTwo from "../../assets/Gallary/1.jpg"
-import imageThree from "../../assets/Gallary/7.jpg"
-import imageFour from "../../assets/Gallary/10.jpg"
-import imageFive from "../../assets/Gallary/8.jpg"
+import imageOne from "../../assets/Gallary/3.jpg";
+import imageTwo from "../../assets/Gallary/1.jpg";
+import imageThree from "../../assets/Gallary/7.jpg";
+import imageFour from "../../assets/Gallary/10.jpg";
+import imageFive from "../../assets/Gallary/8.jpg";
 
 export const FeaturedGallery = memo(() => {
   const [activeId, setActiveId] = useState(1);
@@ -17,7 +17,7 @@ export const FeaturedGallery = memo(() => {
       category: "3D Art",
       year: "2024",
       image: imageOne,
-      behanceLink: "https://www.behance.net",
+      behanceLink: "https://www.behance.net/humza_official",
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ export const FeaturedGallery = memo(() => {
       category: "Branding",
       year: "2023",
       image: imageTwo,
-      behanceLink: "https://www.behance.net",
+      behanceLink: "https://www.behance.net/humza_official",
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ export const FeaturedGallery = memo(() => {
       category: "Motion",
       year: "2024",
       image: imageThree,
-      behanceLink: "https://www.behance.net",
+      behanceLink: "https://www.behance.net/humza_official",
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ export const FeaturedGallery = memo(() => {
       category: "UI/UX",
       year: "2023",
       image: imageFour,
-      behanceLink: "https://www.behance.net",
+      behanceLink: "https://www.behance.net/humza_official",
     },
     {
       id: 5,
@@ -49,7 +49,7 @@ export const FeaturedGallery = memo(() => {
       category: "Art",
       year: "2022",
       image: imageFive,
-      behanceLink: "https://www.behance.net",
+      behanceLink: "https://www.behance.net/humza_official",
     },
   ];
 
@@ -85,7 +85,7 @@ export const FeaturedGallery = memo(() => {
             </span>
           </h2>
           <p className="text-neutral-400 text-lg">
-            Mere kuch creative experiments aur designs ka collection.
+            A showcase of my creative experiments and designs.
           </p>
         </div>
 
@@ -145,7 +145,7 @@ export const FeaturedGallery = memo(() => {
                         e.stopPropagation();
                         window.open(project.behanceLink, "_blank");
                       }}
-                      className="px-6 py-3 bg-white text-black font-bold rounded-full flex items-center gap-2 hover:bg-neutral-200 transition-colors"
+                      className="cursor-pointer px-6 py-3 bg-white text-black font-bold rounded-full flex items-center gap-2 hover:bg-neutral-200 transition-colors"
                     >
                       View on Behance <ArrowUpRight size={18} />
                     </button>

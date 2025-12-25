@@ -1,5 +1,6 @@
 import {
   ArrowRight,
+  Clapperboard,
   Code2,
   ImageIcon,
   Layout,
@@ -120,7 +121,7 @@ export const Services = memo(() => {
             <Layout size={20} className="text-cyan-500" /> Figma
           </span>
           <span className="flex items-center gap-2 text-lg font-bold text-neutral-400">
-            <Code2 size={20} className="text-blue-500" /> Webflow
+            <Clapperboard size={20} className="text-indigo-500" /> After Effects
           </span>
         </div>
       </div>

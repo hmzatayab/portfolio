@@ -3,7 +3,6 @@ import { Hero } from "./components/Sections/Hero";
 import { GlobalStyles } from "./components/GlobalStyles";
 import { Brands } from "./components/Sections/Brands";
 import { Services } from "./components/Sections/Services";
-import { Portfolio } from "./components/Sections/Portfolio";
 import { Contact } from "./components/Sections/Contact";
 import { AvailabilityMarquee, Marquee } from "./components/Sections/Marquee";
 import { Footer } from "./components/Sections/Footer";
@@ -11,6 +10,8 @@ import { Header } from "./components/Sections/Header";
 import { AboutUs } from "./components/Sections/About";
 import { FeaturedGallery } from "./components/Sections/Gallery";
 import { Testimonials } from "./components/Sections/Testimonials";
+import { ResumeBanner } from "./components/Sections/ResumeBanner";
+import { BookBanner } from "./components/Sections/BookBanner";
 
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -43,9 +44,11 @@ const App = () => {
       <Hero scrollToSection={scrollToSection} />
       <Brands />
       <Services />
+      <ResumeBanner />
       <FeaturedGallery />
       <AvailabilityMarquee />
       <AboutUs scrollToSection={scrollToSection} />
+      <BookBanner />
       <Testimonials />
       <Contact />
       <Marquee />

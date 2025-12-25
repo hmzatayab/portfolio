@@ -76,7 +76,7 @@ export const AboutUs = memo(({ scrollToSection }) => {
 
             <div className="grid grid-cols-3 gap-6 pt-4">
               {[
-                { label: "Years Exp.", value: "06+" },
+                { label: "Years Exp.", value: "6+" },
                 { label: "Projects", value: "50+" },
                 { label: "Clients", value: "30+" },
               ].map((stat, i) => (
