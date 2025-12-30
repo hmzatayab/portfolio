@@ -40,12 +40,12 @@ export const Header = memo(() => {
               <div className="absolute inset-0 bg-linear-to-tr from-purple-500 to-blue-500 rounded-xl rotate-6 group-hover:rotate-12 transition-transform opacity-80"></div>
               <div className="absolute inset-0 bg-neutral-900 rounded-xl border border-white/10 flex items-center justify-center">
                 <span className="text-transparent bg-clip-text bg-linear-to-tr from-purple-400 to-blue-400 font-bold text-xl">
-                  A
+                  G
                 </span>
               </div>
             </div>
             <span className="font-bold text-lg">
-              Artifex<span className="text-purple-500">.</span>
+              Goeek<span className="text-purple-500">.</span>
             </span>
           </div>
 
@@ -60,7 +60,7 @@ export const Header = memo(() => {
               </button>
             ))}
             <button className="cursor-pointer px-6 py-2.5 bg-white text-black rounded-full text-sm font-bold hover:bg-neutral-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:scale-105 active:scale-95">
-              Hire Me
+              <a href="https://bit.ly/3LqKVbv">Hire Me</a>
             </button>
           </nav>
 

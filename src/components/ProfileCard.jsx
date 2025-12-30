@@ -72,11 +72,9 @@ export const ProfileCard = memo(
           className="pc-card-shell shadow-2xl shadow-purple-900/20"
         >
           <section className="pc-card flex flex-col items-center justify-center p-8 text-center relative group">
-            
             <div className="absolute inset-0 bg-linear-to-br from-purple-900/40 via-neutral-900/80 to-blue-900/40 z-0"></div>
             <div className="pc-glare z-10"></div>
 
-            
             <div className="relative z-20 flex flex-col items-center w-full">
               <div className="relative mb-6">
                 <div className="w-32 h-32 rounded-full p-1 bg-linear-to-tr from-purple-500 to-blue-500 shadow-lg shadow-purple-500/20">

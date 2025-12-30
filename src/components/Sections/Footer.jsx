@@ -7,9 +7,9 @@ export const Footer = memo(() => {
         <div className="text-center md:text-left">
           <h2 className="text-2xl font-bold tracking-tighter flex items-center gap-2 justify-center md:justify-start">
             <span className="w-8 h-8 bg-linear-to-tr from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white text-sm">
-              A
+              G
             </span>
-            Artifex.
+            Goeek.
           </h2>
           <p className="text-neutral-500 text-sm mt-2">
             Creating digital experiences that matter.
@@ -32,7 +32,7 @@ export const Footer = memo(() => {
         </div>
 
         <div className="text-neutral-600 text-sm">
-          © 2024 Artifex Design. All rights reserved.
+          © 2025 Goeek Design. All rights reserved.
         </div>
       </div>
     </footer>

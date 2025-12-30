@@ -7,7 +7,7 @@ export const Testimonials = memo(() => {
       id: 1,
       name: "Ali Raza",
       role: "Founder of TechSolutions",
-      text: "Ahmed's work is outstanding! He gave our brand identity a completely new look. Highly recommended.",
+      text: "Hamza work is outstanding! He gave our brand identity a completely new look. Highly recommended.",
       avatar:
         "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&q=80",
     },

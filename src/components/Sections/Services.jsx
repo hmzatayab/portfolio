@@ -1,7 +1,6 @@
 import {
   ArrowRight,
   Clapperboard,
-  Code2,
   ImageIcon,
   Layout,
   Monitor,
@@ -9,33 +8,71 @@ import {
   PenTool,
   Rocket,
 } from "lucide-react";
-import { memo } from "react";
-import { Background } from "../Background";
+import { memo, useState } from "react";
+import { ServiceModal } from "../ServiceModal";
 
 export const Services = memo(() => {
+  const [selectedService, setSelectedService] = useState(null);
+
   const servicesList = [
     {
       title: "Brand Identity",
       desc: "Logos, color palettes, and visual guidelines that make your brand unique.",
-      icon: <Palette size={28} />,
+      longDesc:
+        "We don’t just create logos we design the complete DNA of your brand. This includes logo design, color psychology, typography selection, and visual guidelines that make your brand consistent and memorable.",
+      tags: [
+        "Logo Design",
+        "Brand Guidelines",
+        "Typography",
+        "Color Palette",
+        "Stationery",
+      ],
+      icon: <Palette size={32} />,
       color: "from-pink-500 to-rose-500",
     },
     {
       title: "UI/UX Design",
       desc: "Clean, modern, and user-friendly interfaces for websites and mobile apps.",
-      icon: <Layout size={28} />,
+      longDesc:
+        "A user-centric design approach that looks beautiful and works smoothly. From wireframing to high-fidelity prototypes, we handle everything so you can experience the final product even before development starts.",
+      tags: [
+        "Wireframing",
+        "Prototyping",
+        "Mobile Apps",
+        "Web Design",
+        "User Research",
+      ],
+      icon: <Layout size={32} />,
       color: "from-purple-500 to-indigo-500",
     },
     {
       title: "Social Media",
       desc: "Engaging posts and banners for Instagram and LinkedIn that grab attention.",
-      icon: <ImageIcon size={28} />,
+      longDesc:
+        "Grabbing attention on social media is essential today. We create visuals that stop the scroll Instagram reels, static posts, and LinkedIn carousels designed to boost engagement.",
+      tags: [
+        "Instagram Posts",
+        "LinkedIn Carousels",
+        "Reels Assets",
+        "Ad Creatives",
+        "Banners",
+      ],
+      icon: <ImageIcon size={32} />,
       color: "from-cyan-500 to-blue-500",
     },
     {
       title: "Vector Art",
       desc: "Custom illustrations and vector graphics that take your content to the next level.",
-      icon: <PenTool size={28} />,
+      longDesc:
+        "Custom illustrations that are better than stock photos. Using vector art, we simplify complex ideas in a visually appealing way. Scalable graphics that look perfect at every size.",
+      tags: [
+        "Custom Illustrations",
+        "Iconography",
+        "Mascot Design",
+        "Infographics",
+        "Vector Tracing",
+      ],
+      icon: <PenTool size={32} />,
       color: "from-emerald-500 to-teal-500",
     },
   ];
@@ -45,7 +82,26 @@ export const Services = memo(() => {
       id="services"
       className="relative z-10 py-24 bg-neutral-950 overflow-hidden"
     >
-      <Background />
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div
+          className="absolute top-20 left-0 w-[600px] h-[600px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(0,0,0,0) 70%)",
+            transform: "translate3d(0,0,0)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 right-0 w-[500px] h-[500px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0,0,0,0) 70%)",
+            transform: "translate3d(0,0,0)",
+          }}
+        />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+      </div>
+
       <div className="absolute top-1/6 left-0 -translate-y-1/2 w-full text-center overflow-hidden opacity-[0.03] select-none">
         <span className="text-[15rem] md:text-[20rem] font-black uppercase tracking-tighter whitespace-nowrap">
           Services
@@ -75,10 +131,11 @@ export const Services = memo(() => {
           {servicesList.map((service, index) => (
             <div
               key={index}
-              className="group relative p-1 rounded-3xl bg-linear-to-b from-white/10 to-white/5 hover:from-purple-500/50 hover:to-blue-500/50 transition-all duration-500 hover:-translate-y-2"
+              onClick={() => setSelectedService(service)}
+              className="group relative p-1 rounded-3xl bg-linear-to-b from-white/10 to-white/5 hover:from-purple-500/50 hover:to-blue-500/50 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
             >
               <div className="h-full bg-neutral-900/90 backdrop-blur-xl rounded-[1.3rem] p-8 flex flex-col relative overflow-hidden">
-                <div className="absolute -right-4 -bottom-8 text-[8rem] font-bold text-white/2 group-hover:text-white/5 transition-colors select-none leading-none z-0">
+                <div className="absolute -right-4 -bottom-8 text-[8rem] font-bold text-white/5 group-hover:text-white/10 transition-colors select-none leading-none z-0">
                   0{index + 1}
                 </div>
                 <div
@@ -110,7 +167,7 @@ export const Services = memo(() => {
           ))}
         </div>
 
-        <div className="mt-16 py-5 border-y border-white/5 bg-white/2 backdrop-blur-sm grid grid-cols-2 justify-items-center md:flex md:justify-around md:items-center gap-8 opacity-60">
+        <div className="mt-16 py-5 border-y border-white/5 bg-white/5 backdrop-blur-sm grid grid-cols-2 justify-items-center md:flex md:justify-around md:items-center gap-8 opacity-60">
           <span className="flex items-center gap-2 text-lg font-bold text-neutral-400">
             <Monitor size={20} className="text-purple-500" /> Photoshop
           </span>
@@ -125,8 +182,15 @@ export const Services = memo(() => {
           </span>
         </div>
       </div>
+
       <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/6 -translate-y-1/2 w-[120%] h-[120%] border border-white/5 rounded-full opacity-50 animate-spin-slow duration-[20s]"></div>
       <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-white/5 rounded-full opacity-50 animate-spin-slow duration-[20s]"></div>
+
+      <ServiceModal
+      className="z-50"
+        service={selectedService}
+        onClose={() => setSelectedService(null)}
+      />
     </section>
   );
 });
